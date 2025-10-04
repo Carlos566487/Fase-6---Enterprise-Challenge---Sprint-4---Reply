@@ -1,5 +1,3 @@
-# HERMIA_Sprint4_Enterprise-Challenge
-
 ### FIAP - Faculdade de Informática e Administração Paulista
 
 🌐 Fase 6 - Colheita de soluções inteligentes - transformando dados em ações  /  Sprint 4 — Enterprise Challenge FIAP / Hermes Reply
