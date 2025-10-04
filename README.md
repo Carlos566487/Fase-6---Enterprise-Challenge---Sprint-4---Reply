@@ -6,7 +6,7 @@
 
 <br>
 
-🌐 Fase 6 - Colheita de soluções inteligentes - transformando dados em ações  /  Sprint 4 — Enterprise Challenge FIAP / Hermes Reply
+🌐 Fase 6 - Colheita de soluções inteligentes -Transformando dados em ações  /  Sprint 4 — Enterprise Challenge FIAP / Hermes Reply
 
 Equipe 
 
