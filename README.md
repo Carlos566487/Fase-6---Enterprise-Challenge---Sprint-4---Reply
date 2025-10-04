@@ -207,6 +207,10 @@ Arquitetura do sistema: /docs/arquitetura/SPRINT4-hermia.drawio.png
 Prints de execução no dashboard: /dashboard/screenshots/
 Saída simulada dos sensores: /sensors/saida_sensor.csv
 
+## 🎥 Demonstração em Vídeo
+
+[![Assista no YouTube](https://img.youtube.com/vi/5JgDcjniPpw/0.jpg)](https://youtu.be/5JgDcjniPpw)
+
 
 📢 Observações Finais
 Este repositório evoluiu das entregas anteriores, combinando arquitetura planejada, simulação, modelagem e visualização em um MVP funcional.
