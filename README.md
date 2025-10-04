@@ -174,7 +174,7 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
 
 1. Clone o repositório  
    ```bash
-   git clone https://github.com/tayesteves/HERMIA_Sprint4_Enterprise-Challenge.git
+   git clone https://github.com/Carlos566487/Fase-6---Enterprise-Challenge---Sprint-4---Reply.git
    cd HERMIA_Sprint4_Enterprise-Challenge
 
 Caso queira rodar em modo simulado ou modo real (ESP32), siga as instruções no README da pasta sensors/
