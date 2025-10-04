@@ -74,6 +74,12 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
 
 ---
 
+## 🗄️ Como o Banco de Dados foi Modelado
+
+O banco de dados foi projetado para garantir a **integridade dos dados coletados pelos sensores**, registrar **alertas de falhas** e manter um **histórico de manutenção** das máquinas monitoradas. O modelo segue princípios de normalização e respeita as regras de integridade e restrições definidas.
+
+---
+
 ### Estrutura Geral das Tabelas
 
 - **Tabela `MAQUINA_AUTONOMA`**
