@@ -72,12 +72,7 @@ O objetivo é demonstrar um **pipeline ponta a ponta**: coleta → ingestão →
 
 O banco de dados foi projetado para garantir a **integridade dos dados coletados pelos sensores**, registrar **alertas de falhas** e manter um **histórico de manutenção** das máquinas monitoradas. O modelo segue princípios de normalização e respeita as regras de integridade e restrições definidas.
 
----
-
-## 🗄️ Como o Banco de Dados foi Modelado
-
-O banco de dados foi projetado para garantir a **integridade dos dados coletados pelos sensores**, registrar **alertas de falhas** e manter um **histórico de manutenção** das máquinas monitoradas. O modelo segue princípios de normalização e respeita as regras de integridade e restrições definidas.
-
+![MAQUINA_AUTONOMA](dados_saida/figs/banco_dados/01_tabelas.png)
 ---
 
 ### Estrutura Geral das Tabelas
