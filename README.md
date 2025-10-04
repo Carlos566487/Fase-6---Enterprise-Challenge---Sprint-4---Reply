@@ -2,7 +2,8 @@
 
 ### FIAP - Faculdade de Informática e Administração Paulista
 
-# 🌐 HERMIA Sprint 4 — Enterprise Challenge FIAP / Hermes Reply
+# 🌐 Fase 6 - Colheita de soluções inteligentes - transformando dados em ações  /  
+ Sprint 4 — Enterprise Challenge FIAP / Hermes Reply
 
 Equipe 
 
@@ -30,12 +31,17 @@ O objetivo é demonstrar um **pipeline ponta a ponta**: coleta → ingestão →
 
 📂 Estrutura do Repositório
 
+![Estrutura do Repositório](dados_saida/figs/estrutura_diretorios.png)
+
+
 - [`/sensors`](./sensors) → Código para ESP32 (modo simulado e real), configuração no PlatformIO/Wokwi e saída dos sensores.  
 - [`/ingest`](./ingest) → Dados simulados de entrada (CSV) para popular o pipeline.  
 - [`/db`](./db) → Scripts SQL para criação do esquema (schema.sql) e consultas (queries.sql).  
 - [`/ml`](./ml) → Treinamento e execução de modelos de Machine Learning.  
 - [`/dashboard`](./dashboard) → Aplicação Streamlit para visualização de métricas e alertas, com evidências em `/dashboard/screenshots`.  
 - [`/docs/arquitetura`](./docs/arquitetura) → Diagramas e documentação do sistema.  
+
+![Estrutura do Repositório](dados_saida/figs/estrutura_diretorios.png)
 
 ---
 
@@ -77,6 +83,9 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
   - Armazena informações das máquinas monitoradas.
   - **Chave primária:** `ID_MAQUINA`
   - **Restrições:** `NOT NULL` em campos essenciais; `CHECK (Tipo IN ('Solda','Corte','Montagem','Pintura'))` garante apenas tipos válidos de máquina.
+  
+![MAQUINA_AUTONOMA](dados_saida/figs/banco_dados/08_t_maquina_autonoma.png)
+
 
 - **Tabela `LEITURA_SENSORES`**
   - Centraliza as leituras enviadas pelos sensores (temperatura, vibração, luminosidade, qualidade do ar, etc.).
@@ -93,12 +102,16 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
       - `QUALIDADE_AR`: 0 a 500  
       - `DIAS_ULTIMA_MANUTENCAO`: 0 a 37000  
 
+![LEITURA SENSORES](dados_saida/figs/banco_dados/04_t_leitura_sensores.png)
+
 - **Tabela `FUNCIONARIO`**
   - Registra os responsáveis por manutenção.
   - **Chave primária:** `ID_FUNCIONARIO`
   - **Restrições:**
     - `NOT NULL` em todas as colunas.
     - `CHECK (Salario >= 1518)` assegura que salários sejam acima do mínimo.
+    
+![FUNCIONARIO](dados_saida/figs/banco_dados/03_dados_t_funcionario.png)
 
 - **Tabela `MANUTENCAO`**
   - Registra eventos de manutenção preventiva ou corretiva.
@@ -107,6 +120,9 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
     - `ID_FUNCIONARIO` → `FUNCIONARIO`
     - `ID_MAQUINA` → `MAQUINA_AUTONOMA`
   - **Restrições:** `NOT NULL` em todos os campos.
+  
+![MANUTENÇÃO](dados_saida/figs/banco_dados/06_t_manutencao.png)  
+
 
 - **Tabela `ALERTS` (complementar ao dashboard)**
   - Mantém o log de alertas disparados pelas regras de negócio do sistema.
@@ -124,6 +140,8 @@ O banco de dados foi projetado para garantir a **integridade dos dados coletados
 
 - **1:N entre `MAQUINA_AUTONOMA` e `LEITURA_SENSORES`**  
   Cada máquina pode ter milhares de leituras ao longo do tempo.  
+  
+
 
 - **1:N entre `MAQUINA_AUTONOMA` e `MANUTENCAO`**  
   Uma máquina pode passar por várias manutenções.  
@@ -173,12 +191,12 @@ O resultado esperado é o arquivo ingest/readings.csv.
 
 - Treinar / rodar modelo de Machine Learning
    ```bash
-   cd ml
-   python train_model.py
+   cd ML
+   python pipeline_sensor5.py
 
 - Executar o dashboard (Streamlit)
  ```bash
-   cd dashboard
+   cd ML
    streamlit run streamlit_app.py
 . 
 
